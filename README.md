@@ -52,5 +52,53 @@ Stock-Price-Prediction-with-LSTM-and-PPO/
 └── README.md
 
 ```
+---
+## Flowchart
+```text
+[1. 데이터 수집]
+   ├─ data/yfi_day_data.py        -> 일봉 CSV 생성
+   ├─ data/yfi_hour_data.py       -> 시간봉 CSV 생성
+   └─ data/alp_yf_hour.py         -> 고급 시간봉 CSV 생성
+              ↓
+[2. 피처 엔지니어링]
+   - RSI, MACD, ATR, VWAP 계산
+   - 거시지표 병합 (VIX, TNX, DXY, QQQ, XLK)
+   - 시간 특성 추가 (DayOfWeek, Hour)
+              ↓
+[3. LSTM 학습 및 예측]
+   - lstm.py 실행
+   - 과거 60개 시점 → 다음 1개 시점 예측
+   - 모델 저장: models/{ticker}_lstm_model.pth
+   - Scaler 저장: models/{ticker}_scaler_X.pkl, scaler_y.pkl
+              ↓
+[4. PPO 강화학습]
+   - ppo.py 실행
+   - LSTM 예측값을 State에 포함
+   - 매매 행동 학습 (매도/보유/매수)
+   - PPO 모델 저장: ppo_models/{ticker}_ppo_model.zip
+              ↓
+[5. 백테스팅 및 평가]
+   - 검증 데이터로 시뮬레이션
+   - 수익률, 샤프비율, MDD 계산
+   - 자산 곡선 시각화
+
+[뉴스 분석 (옵션)]
+   - agent/agent_summary.py 실행
+   - 실시간 뉴스 + 펀더멘털 수집
+   - Qwen LLM으로 투자 인사이트 생성
+
+```
 
 ---
+**[성능 지표]**
+**LSTM 평가**
+- RMSE (Root Mean Squared Error): 평균 예측 오차
+- MAE (Mean Absolute Error): 절대 오차
+- Directional Accuracy: 방향 예측 정확도 (상승/하락)
+
+*PPO 백테스팅**
+- 수익률: (최종 자산 - 초기 자본) / 초기 자본 × 100
+- 샤프 비율: 위험 대비 수익률 (Sharpe Ratio)
+- MDD: 최대 낙폭 (Maximum Drawdown)
+- 거래 횟수: 총 매수/매도 실행 횟수
+- 승률: 수익 거래 비율
