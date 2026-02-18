@@ -88,6 +88,9 @@ Stock-Price-Prediction-with-LSTM-and-PPO/
    - Qwen LLM으로 투자 인사이트 생성
 
 ```
+---
+**[백테스팅 결과]**
+<img width="570" height="190" alt="image" src="https://github.com/user-attachments/assets/8f6c2e36-7f5d-4708-9f5a-da31ed2d6682" />
 
 ---
 **[성능 지표]**
