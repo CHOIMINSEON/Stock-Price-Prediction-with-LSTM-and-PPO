@@ -89,7 +89,9 @@ Stock-Price-Prediction-with-LSTM-and-PPO/
 
 ```
 ---
+
 **[백테스팅 결과]**
+
 <img width="570" height="190" alt="image" src="https://github.com/user-attachments/assets/8f6c2e36-7f5d-4708-9f5a-da31ed2d6682" />
 
 ---
