@@ -1,2 +1,4 @@
-# Stock-Price-Prediction-with-LSTM-and-PPO
-Trains an LSTM on market and indicator data and uses PPO for automated trading.
+# 주가 예측을 위한 시계열 모델 및 강화학습(2025)
+*미국 주식의 방향을 예측하고 매수, 매도를 진행하는 에이전트를 개발하고자 프로젝트 진행.
+*주가에 영향을 줄 수 있는 날짜, 시간, 경제지표, 기술적지표 데이터를 활용해 시계열 모델(lstm)을 학습.
+*학습한 시계열 모델(lstm)을 바탕으로 매수,매도를 진행하는 강화학습(ppo)을 진행해 검증기간 수익률 확인.
