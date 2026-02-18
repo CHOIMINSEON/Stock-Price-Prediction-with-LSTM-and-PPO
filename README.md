@@ -101,7 +101,7 @@ Stock-Price-Prediction-with-LSTM-and-PPO/
 - MAE (Mean Absolute Error): 절대 오차
 - Directional Accuracy: 방향 예측 정확도 (상승/하락)
 
-*PPO 백테스팅**
+**PPO 백테스팅**
 - 수익률: (최종 자산 - 초기 자본) / 초기 자본 × 100
 - 샤프 비율: 위험 대비 수익률 (Sharpe Ratio)
 - MDD: 최대 낙폭 (Maximum Drawdown)
